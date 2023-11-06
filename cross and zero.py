@@ -21,7 +21,7 @@ def win(L):
         return True
     return False
 
-print('Ход - это x или o (через английскую раскладку)')
+print("""Допустимы буквы "x", "o". Первым ходит "x", вторым "o" (через английскую раскладку)""")
 lst = [[' ', '0', '1', '2'],
        ['0', '-', '-', '-'],
        ['1', '-', '-', '-'],
@@ -32,7 +32,7 @@ zero = 0
 for step in range(10**9):
     prnt = [' '.join(lst[i]) for i in range(len(lst))]
     print(*prnt, sep='\n')
-    print('Введите строку, столбец и ход игрока через пробел')
+    print('Введите строку, столбец и букву игрока через пробел')
 
     pack = list(map(str, input().split()))
     if len(pack) != 3:
@@ -45,7 +45,7 @@ for step in range(10**9):
         print('Неправильно введён ход')
         continue
     if not(w == 'x' or w == 'o'):
-        print('Неправильный ход!')
+        print('Неправильная буква!')
         continue
     if lst[a][b] != '-':
         print('Позиция занята!')
