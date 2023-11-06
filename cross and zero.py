@@ -34,10 +34,16 @@ for step in range(10**9):
     print(*prnt, sep='\n')
     print('Введите строку, столбец и ход игрока через пробел')
 
-    a, b, w = map(str, input().split())
+    pack = list(map(str, input().split()))
+    if len(pack) != 3:
+        print('Неправильно введён ход')
+        continue
+    a, b, w = pack[0], pack[1], pack[2]
     a = int(a) + 1
     b = int(b) + 1
-
+    if not(1 <= a <= 3) or not(1 <= b <= 3):
+        print('Неправильно введён ход')
+        continue
     if not(w == 'x' or w == 'o'):
         print('Неправильный ход!')
         continue
